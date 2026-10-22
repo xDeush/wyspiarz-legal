@@ -57,7 +57,7 @@ Bot jest przeznaczony dla osób, które spełniają minimalny wiek wymagany prze
 
 ## 9. Kontakt
 
-https://discord.gg/BPFGNPeUWz
+Napisz do właściciela bota (xdeush) na serwerze Discord: https://discord.gg/BPFGNPeUWz lub e-mailem: xDeushcontact@protonmail.com
 
 ## 10. Zmiany
 
@@ -122,7 +122,7 @@ The Bot is intended for users who meet Discord’s minimum age requirement in th
 
 ## 9. Contact
 
-https://discord.gg/BPFGNPeUWz
+Contact the bot owner (xdeush) on the Discord server: https://discord.gg/BPFGNPeUWz or via e-mail: xDeushcontact@protonmail.com
 
 ## 10. Changes
 
