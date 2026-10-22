@@ -24,7 +24,7 @@ Ta polityka opisuje, jakie dane zbiera bot Discord Wyspiarz („Bot”), prowadz
 
 ## 2. Treść wiadomości
 
-Bot czyta treść wiadomości tylko po to, żeby obsłużyć swoje funkcje: kanał GIF-ów, podpowiedzi do często zadawanych pytań, komendy tekstowe (np. `!train`), przenoszenie wiadomości na kanale „czyściec” oraz asystenta AI. **Bot nie zapisuje treści zwykłych wiadomości** w żadnej bazie danych. Wyjątkiem są notatki dodane świadomie przez administrację komendą `!train`.
+Bot czyta treść wiadomości tylko po to, żeby obsłużyć swoje funkcje: kanał GIF-ów, komendy tekstowe (np. `!train`), przenoszenie wiadomości na kanale „czyściec” oraz asystenta AI. **Bot nie zapisuje treści zwykłych wiadomości** w żadnej bazie danych. Wyjątkiem są notatki dodane świadomie przez administrację komendą `!train`.
 
 ## 3. Asystent AI (Google Gemini)
 
@@ -89,7 +89,7 @@ This policy explains what data the Discord bot Wyspiarz (“the Bot”), operate
 
 ## 2. Message content
 
-The Bot reads message content only to run its features: the GIF channel, automatic answers to frequently asked questions, text commands (e.g. `!train`), reposting messages in the “purgatory” channel, and the AI assistant. **The Bot does not store the content of regular messages** in any database. The only exception is notes deliberately added by staff with `!train`.
+The Bot reads message content only to run its features: the GIF channel, text commands (e.g. `!train`), reposting messages in the “purgatory” channel, and the AI assistant. **The Bot does not store the content of regular messages** in any database. The only exception is notes deliberately added by staff with `!train`.
 
 ## 3. AI assistant (Google Gemini)
 
