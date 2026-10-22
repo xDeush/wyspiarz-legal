@@ -57,7 +57,7 @@ Bot jest przeznaczony dla osób, które spełniają minimalny wiek wymagany prze
 
 ## 9. Kontakt
 
-[KONTAKT — np. adres e-mail lub link do serwera Discord].
+https://discord.gg/BPFGNPeUWz
 
 ## 10. Zmiany
 
@@ -122,7 +122,7 @@ The Bot is intended for users who meet Discord’s minimum age requirement in th
 
 ## 9. Contact
 
-[CONTACT — e.g. e-mail address or Discord server invite].
+https://discord.gg/BPFGNPeUWz
 
 ## 10. Changes
 
