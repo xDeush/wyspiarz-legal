@@ -36,7 +36,7 @@ Bot jest udostępniany „w stanie, w jakim jest”, bez gwarancji ciągłego dz
 Operator może zmieniać te Warunki. Datę aktualizacji podaje się na górze dokumentu. Dalsze korzystanie z Bota po zmianie oznacza akceptację nowych Warunków.
 
 ## 8. Kontakt
-Pytania dotyczące Bota: https://discord.gg/BPFGNPeUWz.
+Pytania dotyczące Bota: https://discord.gg/BPFGNPeUWz lub xDeushcontact@protonmail.com
 
 ---
 
@@ -76,4 +76,4 @@ The Bot is provided “as is”, without any guarantee of uptime. The Operator i
 The Operator may update these Terms. The date at the top shows the latest version. Continued use of the Bot after a change means you accept the updated Terms.
 
 ## 8. Contact
-Questions about the Bot: https://discord.gg/BPFGNPeUWz.
+Questions about the Bot: https://discord.gg/BPFGNPeUWz or xDeushcontact@protonmail.com
