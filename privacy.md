@@ -1,6 +1,6 @@
 # Polityka prywatności bota Wyspiarz
 
-*Ostatnia aktualizacja: 22 października 2026*
+*Ostatnia aktualizacja: 26 października 2026*
 
 > English version below.
 
@@ -18,20 +18,17 @@ Ta polityka opisuje, jakie dane zbiera bot Discord Wyspiarz („Bot”), prowadz
 
 **Role czasowe:** kto, komu i jaką rolę przyznał oraz kiedy rola wygasa.
 
-**Archiwum GIF-ów i kanał pomysłów:** ID autora, ID kanału i wiadomości oraz czas dodania, żeby uniknąć duplikatów i zarządzać wpisami.
-
-**Notatki treningowe AI:** krótkie notatki, które dodaje administracja serwera komendą `!train`, razem z ID osoby, która je dodała.
+**Archiwum GIF-ów i kanał pomysłów:** ID autora, ID kanału i wiadomości oraz czas dodania (bez treści wiadomości), żeby uniknąć duplikatów i zarządzać wpisami.
 
 ## 2. Treść wiadomości
 
-Bot czyta treść wiadomości tylko po to, żeby obsłużyć swoje funkcje: kanał GIF-ów, komendy tekstowe (np. `!train`), przenoszenie wiadomości na kanale „czyściec” oraz asystenta AI. **Bot nie zapisuje treści zwykłych wiadomości** w żadnej bazie danych. Wyjątkiem są notatki dodane świadomie przez administrację komendą `!train`.
+Bot **nie ma dostępu do treści zwykłych wiadomości** na serwerze. Discord udostępnia mu tylko treść wiadomości, w których Bot został oznaczony (używane przez asystenta AI, patrz punkt 3). Wiadomości do moderacji na kanale purgatory są wysyłane komendą `/purgatory`. **Bot nie zapisuje treści wiadomości** w żadnej bazie danych.
 
 ## 3. Asystent AI (Google Gemini)
 
 Gdy uprawniona osoba oznaczy Bota, żeby zadać mu pytanie, Bot wysyła do **Google Gemini API**:
 - treść tej wiadomości,
-- do 3 poprzednich wiadomości z kanału (albo wiadomość, na którą odpowiedziano) jako kontekst, każda skrócona do 500 znaków,
-- nazwy użytkowników ich autorów i nazwę kanału.
+- nazwę użytkownika osoby pytającej i nazwę kanału.
 
 Google przetwarza te dane zgodnie z [warunkami Gemini API](https://ai.google.dev/gemini-api/terms). Bot nie zapisuje tych rozmów.
 
@@ -67,7 +64,7 @@ Operator może aktualizować tę politykę. Datę aktualizacji podaje się na g�
 
 # Wyspiarz Privacy Policy
 
-*Last updated: 22 October 2026*
+*Last updated: 26 October 2026*
 
 This policy explains what data the Discord bot Wyspiarz (“the Bot”), operated by xdeush (“the Operator”), collects, why, and how long it is kept.
 
@@ -83,20 +80,17 @@ This policy explains what data the Discord bot Wyspiarz (“the Bot”), operate
 
 **Temporary roles:** who granted which role to whom, and when it expires.
 
-**GIF archive and ideas channel:** author ID, channel and message IDs and timestamp, used to prevent duplicates and manage entries.
-
-**AI training notes:** short notes added by server staff with the `!train` command, along with the ID of the staff member who added them.
+**GIF archive and ideas channel:** author ID, channel and message IDs and timestamp (no message text), used to prevent duplicates and manage entries.
 
 ## 2. Message content
 
-The Bot reads message content only to run its features: the GIF channel, text commands (e.g. `!train`), reposting messages in the “purgatory” channel, and the AI assistant. **The Bot does not store the content of regular messages** in any database. The only exception is notes deliberately added by staff with `!train`.
+The Bot **does not have access to the content of regular messages** on the server. Discord only provides it with the content of messages that mention the Bot (used by the AI assistant, see section 3). Messages to moderators in the purgatory channel are sent with the `/purgatory` command. **The Bot does not store message content** in any database.
 
 ## 3. AI assistant (Google Gemini)
 
 When an authorized user mentions the Bot to ask a question, the Bot sends to the **Google Gemini API**:
 - the content of that message,
-- up to 3 previous messages from the channel (or the message being replied to) as context, each truncated to 500 characters,
-- their authors’ usernames and the channel name.
+- the asking user’s username and the channel name.
 
 Google processes this data under the [Gemini API terms](https://ai.google.dev/gemini-api/terms). The Bot does not store these conversations.
 
