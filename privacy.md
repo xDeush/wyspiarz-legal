@@ -20,7 +20,7 @@ Ta polityka opisuje, jakie dane zbiera bot Discord Wyspiarz („Bot”), prowadz
 
 **Archiwum GIF-ów i kanał pomysłów:** ID autora, ID kanału i wiadomości oraz czas dodania (bez treści wiadomości), żeby uniknąć duplikatów i zarządzać wpisami.
 
-**Wykrywanie multikont (moderacja).** Regulamin serwera zakazuje multikont, dlatego Operator korzysta z osobnego narzędzia, które działa na tokenie Bota i czyta historię kanałów dostępnych dla Bota. Dla każdej wiadomości z ostatnich 180 dni zapisuje ID autora, czas, kanał oraz ID osoby, której odpowiedziano lub którą oznaczono. Odpowiedź Bota na komendę liczy jako aktywność osoby, która ją wywołała. Podczas sprawdzania konta narzędzie pobiera też jego nazwę, nick, avatar i datę dołączenia, ale ich nie zapisuje. Ocena nie korzysta z nazw ani avatarów.
+**Wykrywanie multikont (moderacja).** Regulamin serwera zakazuje multikont, dlatego Operator korzysta z osobnego narzędzia, które działa na tokenie Bota. Gdy Operator wskaże dwa konta, narzędzie przegląda historię kanałów dostępnych dla Bota od chwili, gdy oba konta były już na serwerze, najwyżej 180 dni wstecz. Dla tych dwóch kont zapisuje czas i kanał wiadomości oraz to, czy odpowiedziały sobie lub się oznaczyły. Odpowiedź Bota na komendę liczy jako aktywność osoby, która ją wywołała. Wiadomości innych osób nie są zapisywane: zostają z nich tylko zbiorcze liczby na kanał i godzinę tygodnia, bez żadnych ID. Podczas porównania narzędzie pobiera też nazwy, nicki, avatary i daty dołączenia obu kont, ale ich nie zapisuje. Ocena nie korzysta z nazw ani avatarów.
 
 ## 2. Treść wiadomości
 
@@ -36,13 +36,13 @@ Google przetwarza te dane zgodnie z [warunkami Gemini API](https://ai.google.dev
 
 ## 4. Dane członków serwera
 
-Bot korzysta z listy członków serwera, żeby wysyłać wiadomości powitalne, liczyć członków, sprawdzać role (np. dostęp do asystenta AI lub do funkcji ekonomii) oraz zarządzać rolami. Lista członków i ich profile służą też do wykrywania multikont (punkt 1). Bot nie zbiera danych o statusie online ani aktywności (presence).
+Bot korzysta z listy członków serwera, żeby wysyłać wiadomości powitalne, liczyć członków, sprawdzać role (np. dostęp do asystenta AI lub do funkcji ekonomii) oraz zarządzać rolami. Profile porównywanych kont służą też do wykrywania multikont (punkt 1). Bot nie zbiera danych o statusie online ani aktywności (presence).
 
 ## 5. Do czego używamy danych
 
 Dane służą wyłącznie do działania funkcji Bota i do moderacji serwera. **Nie sprzedajemy ich, nie udostępniamy reklamodawcom i nie używamy ich do reklam.** Jedynym zewnętrznym podmiotem, który dostaje jakiekolwiek dane, jest Google (patrz punkt 3).
 
-**Profilowanie na potrzeby moderacji.** Narzędzie do wykrywania multikont porównuje czas pisania, kanały oraz daty założenia kont i dołączenia na serwer, a potem wylicza ocenę, czy dwa konta mogą należeć do jednej osoby. Jest to profilowanie. Podstawą jest prawnie uzasadniony interes Operatora (art. 6 ust. 1 lit. f RODO), czyli egzekwowanie regulaminu serwera. Ocena to poszlaka, a nie dowód: narzędzie nie nakłada kar automatycznie, a decyzję podejmuje człowiek. Wyniki widzi tylko Operator.
+**Profilowanie na potrzeby moderacji.** Narzędzie do wykrywania multikont porównuje czas pisania, kanały oraz daty założenia kont i dołączenia na serwer dwóch wskazanych kont, a potem wylicza ocenę, czy mogą należeć do jednej osoby. Jest to profilowanie. Podstawą jest prawnie uzasadniony interes Operatora (art. 6 ust. 1 lit. f RODO), czyli egzekwowanie regulaminu serwera. Ocena to poszlaka, a nie dowód: narzędzie nie nakłada kar automatycznie, a decyzję podejmuje człowiek. Wyniki widzi tylko Operator.
 
 ## 6. Przechowywanie i bezpieczeństwo
 
@@ -50,7 +50,7 @@ Dane są przechowywane w plikach na serwerze Operatora. Kopie zapasowe danych ek
 
 ## 7. Twoje prawa
 
-Możesz poprosić o wgląd w swoje dane albo o ich usunięcie, kontaktując się z Operatorem (punkt 9). Usunięcie danych oznacza utratę postępu w ekonomii i eventach. Jeśli przebywasz w UE, przysługują Ci także prawa wynikające z RODO, w tym prawo do sprzeciwu wobec profilowania na potrzeby moderacji oraz prawo do złożenia skargi do organu nadzorczego (w Polsce: Prezes UODO).
+Możesz poprosić o wgląd w swoje dane albo o ich usunięcie, kontaktując się z Operatorem (punkt 9). Usunięcie danych oznacza utratę postępu w ekonomii i eventach. Jeśli przebywasz w UE, przysługują Ci także prawa wynikające z RODO, w tym prawo do sprzeciwu wobec profilowania na potrzeby moderacji oraz prawo do złożenia skargi do organu nadzorczego (w Polsce: Prezes UODO). Po sprzeciwie usuwamy porównania z Twoim kontem, a na liście wykluczonych zostaje samo ID, żeby narzędzie je pomijało.
 
 ## 8. Dzieci
 
@@ -86,7 +86,7 @@ This policy explains what data the Discord bot Wyspiarz (“the Bot”), operate
 
 **GIF archive and ideas channel:** author ID, channel and message IDs and timestamp (no message text), used to prevent duplicates and manage entries.
 
-**Multi-account detection (moderation).** The server rules prohibit multiple accounts, so the Operator uses a separate tool that runs on the Bot's token and reads the history of channels the Bot can access. For each message from the last 180 days it stores the author's ID, the time, the channel and the ID of the person replied to or mentioned. A Bot reply to a command counts as activity of the person who ran that command. When checking an account, the tool also fetches its username, nickname, avatar and join date, but does not store them. The rating does not use usernames or avatars.
+**Multi-account detection (moderation).** The server rules prohibit multiple accounts, so the Operator uses a separate tool that runs on the Bot’s token. When the Operator selects two accounts, the tool reads the history of channels the Bot can access, starting from when both accounts were on the server and going back 180 days at most. For those two accounts it stores the time and channel of their messages and whether they replied to or mentioned each other. A Bot reply to a command counts as activity of the person who ran that command. Other people’s messages are not stored: only combined counts per channel and hour of the week remain, with no IDs. During a comparison, the tool also fetches both accounts’ usernames, nicknames, avatars and join dates, but does not store them. The rating does not use usernames or avatars.
 
 ## 2. Message content
 
@@ -102,13 +102,13 @@ Google processes this data under the [Gemini API terms](https://ai.google.dev/ge
 
 ## 4. Server member data
 
-The Bot uses the server member list to send welcome messages, count members, check roles (e.g. access to the AI assistant or economy features) and manage roles. The member list and profiles are also used for multi-account detection (section 1). The Bot does not collect online status or activity (presence) data.
+The Bot uses the server member list to send welcome messages, count members, check roles (e.g. access to the AI assistant or economy features) and manage roles. Profiles of the compared accounts are also used for multi-account detection (section 1). The Bot does not collect online status or activity (presence) data.
 
 ## 5. How we use data
 
 Data is used only to run the Bot’s features and to moderate the server. **We do not sell it, share it with advertisers or use it for advertising.** The only third party that receives any data is Google (see section 3).
 
-**Profiling for moderation.** The multi-account detection tool compares posting times, channels, account creation dates and server join dates, then calculates a rating of whether two accounts may belong to one person. This is profiling. Its legal basis is the Operator’s legitimate interest (Article 6(1)(f) GDPR) in enforcing the server rules. The rating is an indication, not proof: the tool does not impose penalties automatically, and a person makes the decision. Only the Operator sees the results.
+**Profiling for moderation.** The multi-account detection tool compares the posting times, channels, account creation dates and server join dates of two selected accounts, then calculates a rating of whether they may belong to one person. This is profiling. Its legal basis is the Operator’s legitimate interest (Article 6(1)(f) GDPR) in enforcing the server rules. The rating is an indication, not proof: the tool does not impose penalties automatically, and a person makes the decision. Only the Operator sees the results.
 
 ## 6. Storage and security
 
@@ -116,7 +116,7 @@ Data is stored in files on the Operator’s server. Economy data is backed up au
 
 ## 7. Your rights
 
-You can request access to or deletion of your data by contacting the Operator (section 9). Deletion means losing your economy and event progress. If you are in the EU, you also have rights under the GDPR, including the right to object to profiling for moderation and the right to lodge a complaint with a supervisory authority.
+You can request access to or deletion of your data by contacting the Operator (section 9). Deletion means losing your economy and event progress. If you are in the EU, you also have rights under the GDPR, including the right to object to profiling for moderation and the right to lodge a complaint with a supervisory authority. After an objection we delete comparisons involving your account, and only its ID stays on the exclusion list so the tool can skip it.
 
 ## 8. Children
 
